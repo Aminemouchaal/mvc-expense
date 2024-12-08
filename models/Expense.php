@@ -13,9 +13,9 @@ class Expense extends Model {
         $stmt->execute();
     }
 
-    public function delete($id) {
+    public function delete($index) {
         $stmt = $this->db->prepare("DELETE FROM expenses WHERE id = :id");
-        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':id', $index);
         $stmt->execute();
     }
 }
